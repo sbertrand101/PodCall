@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/bandwidthcom/node-bandwidth",
   "dependencies": {
-    "node-bandwidth" : "^1.0.10"
+    "body-parser": "^1.13.2",
+    "node-bandwidth": "^1.0.10"
   },
   "devDependencies": {
     "async": "^0.9.0",
