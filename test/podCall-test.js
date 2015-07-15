@@ -11,6 +11,13 @@ var app = express();
 
 describe("PodCall", function () {
 	var router;
+	it("should create a new router with credentials passed to constructor", function () {
+		router = new Router("fakeId", "fakeToken", "fakeSecret");
+	});
+});
+
+describe("PodCall", function () {
+	var router;
 	before(function () {
 		router = new Router();
 		app.use("/", router.router);
