@@ -4,7 +4,7 @@ var express = require("express");
 var Router = require("../lib/Router");
 var nock = require("nock");
 var supertest = require("supertest");
-var catapult = require("bandwidth");
+var catapult = require("node-bandwidth");
 
 //nock.recorder.rec();
 var app = express();
