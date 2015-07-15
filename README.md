@@ -7,7 +7,7 @@ PodCall is a catapult-based app for streaming podcasts through phone calls
 Run
 
 ```
-clone https://github.com/inetCatapult/PodCall.git
+git clone https://github.com/inetCatapult/PodCall.git
 npm install
 ```
 
