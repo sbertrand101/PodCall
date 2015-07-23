@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Section scroller one-page template</title>
+    <meta name="description" content="This one page example has a fixed navbar and full page height sections. Each section is vertically centered on larger screens, and then stack responsively on smaller screens. Scrollspy is used to activate the current menu item. This layout also has a contact form example. Uses animate.css, FontAwesome, Google Fonts (Lato and Bitter) and Bootstrap." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Codeply">
+
+
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body >
+    <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#"><img class="logo"  height="40px" src="img/podcall.png"/></a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-collapsible">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#podcasts">Podcasts</a></li>
+                <li><a href="#signup">Sign Up</a></li>
+                <li>&nbsp;</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="container-fluid" id="home">
+    <div class="v-center">
+        <h1 class="text-center">Make The Call</h1>
+        <h2 class="text-center lato animate slideInDown">To Your Favorite Podcast</h2>
+        <p class="text-center">
+            <br>
+            <a href="#signup" class="btn btn-danger btn-lg btn-huge lato" data-toggle="modal" data-target="#myModal">Try it free</a>
+        </p>
+    </div>
+    <!-- <a href="#quotes">
+		<div class="scroll-down bounceInDown animated">
+            <span>
+                <i class="fa fa-angle-down fa-2x"></i>
+            </span>
+		</div>
+        </a> -->
+</section>
+
+<section class="container-fluid" id="quotes">
+    <div class="container v-center">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-center">
+                    <a href="">
+                        <img style="width:150px;" class="img-circle img-responsive img-thumbnail" src="img/james.png">
+                    </a>
+                    <h3 class="text-center"></h3>
+                </div>
+            </div>
+            <div class="col-md-offset-6">
+                <div class="text-center">
+                    <a href="">
+                        <img style="width:150px;" class="img-circle img-responsive img-thumbnail" src="img/emily.jpg">
+                    </a>
+                    <h3 class="text-center"></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="text-center quote">"I love being able to save data on roadtrips by calling in to my favorite podcasts!"</h3>
+            <h3 class="text-center">- James D</h3>
+          </div>
+          <div class="col-md-offset-6">
+            <h3 class="text-center quote">"Having podcasts on speed dial is awesome :)"</h3>
+            <h3 class="text-center">- Emily N</h3>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-center">
+                    <a href="">
+                        <img style="width:150px;" class="img-circle img-responsive img-thumbnail" src="img/ady.jpg">
+                    </a>
+                    <h3 class="text-center"></h3>
+                </div>
+            </div>
+            <div class="col-md-offset-6">
+                <div class="text-center">
+                    <a href="">
+                        <img style="width:150px;" class="img-circle img-responsive img-thumbnail" src="img/nicko.jpg">
+                    </a>
+                    <h3 class="text-center"></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="text-center quote">"I can't get 3G at work so this is a great alternative for me."</h3>
+            <h3 class="text-center">- Ady D</h3>
+          </div>
+          <div class="col-md-offset-6">
+            <h3 class="text-center quote">"I still don't have a smart phone, so it's awesome to finally be able to listen to podcasts."</h3>
+            <h3 class="text-center">- Nicko G</h3>
+          </div>
+        </div>
+    </div>
+    <!--/container-->
+</section>
+
+<section id="signup">
+    <div class="container v-center">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center signupHeading">Sign up for PodCall!</h1>
+                <hr>
+            </div>
+            <div class="col-md-12">
+                <h1 class="text-center signupThankYou">Thank you - Enjoy PodCall!</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="row form-group">
+                    <div class="col-sm-10 signupBox">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" required="">
+                    </div>
+                </div>
+                <div class="row form-group signupBox">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="question" name="question" placeholder="How did you hear about us?" required="">
+                    </div>
+                </div>
+                <div class="row form-group signupBox">
+                    <div class="col-sm-10">
+                        <input type="homepage" class="form-control" id="suggestion" name="suggestion" placeholder="What feature do you want to see added to Podcall?" required="">
+                    </div>
+                </div>
+                <div class="row form-group signupBox">
+                    <div class="col-sm-10">
+                        <button class="btn btn-default btn-lg pull-right" id="submit">Sign up!</button>
+                    </div>
+                </div>
+                <div class="invalidEmailWarning">
+                  <h5>*Please ensure e-mail address is valid</h5>
+                </div>
+                <div class="emptyFieldWarning">
+                  <h5>*Please ensure all fields are filled out</h5>
+                </div>
+            </div>
+            <div class="col-sm-3 pull-right">
+                <address>
+              <strong>Podcall.io</strong><br>
+              900 Main Campus Dr, suite 500<br>
+              Raleigh, NC 27606<br>
+              P: (919) 446-5500
+            </address>
+                <address>
+              <strong>Email Us</strong><br>
+              <a href="mailto:#">contact@podcall.io</a>
+            </address>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid" id="podcasts">
+    <div class="container v-center">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3>Reply All by Gimlet Media</h3></div>
+                            <div class="panel-body">
+                                <p>Reply All is a show about the internet, hosted by PJ Vogt and Alex Goldman. It features stories about how people shape the internet, and the internet shapes people.</p>
+                                <div class="phoneNumber">
+                                  <hr>(716) 259-1901
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3>This American Life</h3></div>
+                            <div class="panel-body">
+                                <p>This American Life is a weekly radio show broadcast on more than 500 stations to about 2.2 million listeners. There's a theme to each episode of This American Life, and a variety of stories on that theme.</p>
+                                <div class= "phoneNumber">
+                                  <hr>(828) 552-4457
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3>Planet Money</h3></div>
+                            <div class="panel-body">
+                                <p>Imagine you could call up a friend and say, "Meet me at the bar and tell me what's going on with the economy." Now imagine that's actually a fun evening. That's what we're going for at Planet Money.</p>
+                                <div class= "phoneNumber">
+                                  <hr>(321) 270-7744
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/row-->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3>Ted Radio Hour</h3></div>
+                            <div class="panel-body">
+                                <p>An idea is the one gift that you can hang onto even after you've given it away. Welcome to TED Radio Hour hosted by Guy Raz - a journey through fascinating ideas.</p>
+                                <div class= "phoneNumber">
+                                  <hr>(512) 434-0404
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3>Radiolab</h3></div>
+                            <div class="panel-body">
+                                <p>Radiolab is a radio show by NPR about curiosity. Where sound illuminates ideas, and the boundaries blur between science, philosophy, and human experience.</p>
+                                <div class= "phoneNumber">
+                                  <hr>(602) 730-9977
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3>Serial</h3></div>
+                            <div class="panel-body">
+                                <p>Serial is a podcast from the creators of This American Life, and is hosted by Sarah Koenig. Serial tells one story - a true story - over the course of an entire season.</p>
+                                <div class= "phoneNumber">
+                                  <hr>(415) 423-0082
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/row-->
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3>Car Talk</h3></div>
+                            <div class="panel-body">
+                                <p>Car Talk is a hilarious, fast-paced call-in radio program by NPR in which hosts Tom and Ray Magliozzi take the fear out of car repair and find the fun in engine failure.</p>
+                                <div class= "phoneNumber">
+                                  <hr>(910) 408-5968
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3>WTF with Marc Maron</h3></div>
+                            <div class="panel-body">
+                                <p>WTF with Marc Maron is a twice-weekly podcast hosted by standup comedian Marc Maron. The program primarily consists of interviews with comedians and comedy writers.</p>
+                                <div class= "phoneNumber">
+                                  <hr>(347) 474-9604
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h3>The B.S. Report</h3></div>
+                            <div class="panel-body">
+                                <p>ESPN.com's Bill Simmons talks about his favorite things in sports: the Celtics, the Red Sox, the Patriots and more. Plus, plenty of the top entertainers join him as well.</p>
+                                <div class= "phoneNumber">
+                                  <hr>(615) 682-8055
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/row-->
+        <div class="row">
+            <br>
+        </div>
+    </div>
+    <!--/container-->
+</section>
+
+<section class="container-fluid" id="icons">
+    <div class="row">
+        <!--fontawesome icons-->
+        <div class="col-sm-1 col-sm-offset-3 col-xs-4 text-center">
+            <i class="fa fa-github fa-4x"></i>
+        </div>
+        <div class="col-sm-1 col-xs-4 text-center">
+            <i class="fa fa-foursquare fa-4x"></i>
+        </div>
+        <div class="col-sm-1 col-xs-4 text-center">
+            <i class="fa fa-pinterest fa-4x"></i>
+        </div>
+        <div class="col-sm-1 col-xs-4 text-center">
+            <i class="fa fa-google-plus fa-4x"></i>
+        </div>
+        <div class="col-sm-1 col-xs-4 text-center">
+            <i class="fa fa-twitter fa-4x"></i>
+        </div>
+        <div class="col-sm-1 col-xs-4 text-center">
+            <i class="fa fa-dribbble fa-4x"></i>
+        </div>
+    </div>
+</section>
+
+<div class="scroll-up">
+	<a href="#"><i class="fa fa-angle-up"></i></a>
+</div>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h2 class="text-center"><img src="http://placehold.it/110" class="img-circle"><br>Login</h2>
+            </div>
+            <div class="modal-body row">
+                <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6>
+                <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-lg" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-danger btn-lg btn-block">Sign In</button>
+                        <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <h6 class="text-center"><a href="">Privacy is important to us. Click here to read why.</a></h6>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--scripts loaded here-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+		$("document").ready(function (){
+			$("#submit").click(function (){
+				var payload = {
+					email : $("#email").val(),
+          question : $("#question").val(),
+          suggestion : $("#suggestion").val()
+				};
+				$.ajax({
+					method: "POST",
+					url: "/signup",
+					contentType: "application/json",
+					data: JSON.stringify(payload),
+					success: function( data ) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (regex.test(payload.email) && payload.question && payload.suggestion) {
+              $(".phoneNumber").show("slow", function () {});
+              $(".signupThankYou").show("slow", function () {});
+              $(".signupHeading").hide();
+              $(".signupBox").hide();
+              $(".invalidEmailWarning").hide();
+              $(".emptyFieldWarning").hide();
+            }
+            else if (regex.test(payload.email)) {
+              $(".emptyFieldWarning").show();
+              $(".invalidEmailWarning").hide();
+            }
+            else {
+              $(".invalidEmailWarning").show();
+              if (!(payload.question && payload.suggestion)) {
+                $(".emptyFieldWarning").show();
+              }
+            }
+					}
+				});
+			});
+		});
+		</script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
