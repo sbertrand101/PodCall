@@ -139,7 +139,7 @@
                 </div>
                 <div class="row form-group signupBox">
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="question" name="question" placeholder="How did you hear about us?" required="">
+                        <input type="text" class="form-control" id="referral" name="referral" placeholder="How did you hear about us?" required="">
                     </div>
                 </div>
                 <div class="row form-group signupBox">
@@ -385,7 +385,7 @@
 			$("#submit").click(function (){
 				var payload = {
 					email : $("#email").val(),
-          question : $("#question").val(),
+          referral : $("#referral").val(),
           suggestion : $("#suggestion").val()
 				};
 				$.ajax({
@@ -395,7 +395,7 @@
 					data: JSON.stringify(payload),
 					success: function( data ) {
             var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            if (regex.test(payload.email) && payload.question && payload.suggestion) {
+            if (regex.test(payload.email) && payload.referral && payload.suggestion) {
               $(".phoneNumber").show("slow", function () {});
               $(".signupThankYou").show("slow", function () {});
               $(".signupHeading").hide();
@@ -409,7 +409,7 @@
             }
             else {
               $(".invalidEmailWarning").show();
-              if (!(payload.question && payload.suggestion)) {
+              if (!(payload.referral && payload.suggestion)) {
                 $(".emptyFieldWarning").show();
               }
             }
