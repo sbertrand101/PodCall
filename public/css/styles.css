@@ -3,8 +3,9 @@
 
 html,body {
 	height:100%;
-    background:center no-repeat fixed url('https://snap-photos.s3.amazonaws.com/img-thumbs/960w/BGRA0KYCD8.jpg');
+    background:center no-repeat fixed url('../img/coverPhoto.jpg');
     background-size: cover;
+		background-position: 20% 0%;
     color:#444;
     font-family: 'Lato', sans-serif;
 }
@@ -157,7 +158,7 @@ section {
 
 
 #home, #signup {
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(64,25,0,0.3);
 	color:#fff;
 }
 
@@ -170,7 +171,7 @@ section {
 }
 
 #signup {
-	background-color: rgba(0,0,0,0.9);
+	background-color: rgba(35,25,0,0.6);
 }
 
 #quotes {
