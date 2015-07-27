@@ -224,8 +224,8 @@ section {
 
 .imgBorder {
 	border-color: #ff6600;
-	border-style: double;
-	border-width: thick;
+	border-style: solid;
+	border-width: 2px;
 }
 
 footer {
