@@ -359,33 +359,32 @@
           referral : $("#referral").val(),
           suggestion : $("#suggestion").val()
 				};
-				$.ajax({
-					method: "POST",
-					url: "/signup",
-					contentType: "application/json",
-					data: JSON.stringify(payload),
-					success: function( data ) {
-            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            if (regex.test(payload.email) && payload.referral && payload.suggestion) {
-              $(".phoneNumber").show("slow", function () {});
-              $(".signupThankYou").show("slow", function () {});
-              $(".signupHeading").hide();
-              $(".signupBox").hide();
-              $(".invalidEmailWarning").hide();
-              $(".emptyFieldWarning").hide();
-            }
-            else if (regex.test(payload.email)) {
-              $(".emptyFieldWarning").show();
-              $(".invalidEmailWarning").hide();
-            }
-            else {
-              $(".invalidEmailWarning").show();
-              if (!(payload.referral && payload.suggestion)) {
-                $(".emptyFieldWarning").show();
-              }
-            }
-					}
-				});
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (regex.test(payload.email) && payload.referral && payload.suggestion) {
+          $(".phoneNumber").show("slow", function () {});
+          $(".signupThankYou").show("slow", function () {});
+          $(".signupHeading").hide();
+          $(".signupBox").hide();
+          $(".invalidEmailWarning").hide();
+          $(".emptyFieldWarning").hide();
+				  $.ajax({
+  					method: "POST",
+  					url: "/signup",
+  					contentType: "application/json",
+  					data: JSON.stringify(payload),
+  					success: function( data ) {}
+				  });
+        }
+        else if (regex.test(payload.email)) {
+          $(".emptyFieldWarning").show();
+          $(".invalidEmailWarning").hide();
+        }
+        else {
+          $(".invalidEmailWarning").show();
+          if (!(payload.referral && payload.suggestion)) {
+            $(".emptyFieldWarning").show();
+          }
+        }
 			});
 		});
 		</script>
