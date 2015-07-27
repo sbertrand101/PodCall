@@ -6,7 +6,6 @@ var nock = require("nock");
 var supertest = require("supertest");
 var catapult = require("node-bandwidth");
 
-//nock.recorder.rec();
 var app = express();
 
 describe("PodCall", function () {
@@ -44,7 +43,9 @@ describe("PodCall", function () {
 			supertest(app)
 				.post("/calls")
 				.send({
-					"callId" : "fakeId"
+					"callId"    : "fakeId",
+					"eventType" : "incomingcall",
+					"to"        : "someNumber"
 				})
 				.expect(500)
 				.end(done);
