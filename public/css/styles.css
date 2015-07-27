@@ -222,6 +222,12 @@ section {
 	display: block;
 }
 
+.imgBorder {
+	border-color: #ff6600;
+	border-style: double;
+	border-width: thick;
+}
+
 footer {
 	background-color:#2b2b2b;
     color:#ddd;
