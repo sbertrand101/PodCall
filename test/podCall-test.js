@@ -36,6 +36,9 @@ describe("PodCall", function () {
 	describe("should answer an incoming call", function () {
 		before(function () {
 			nock("https://api.catapult.inetwork.com:443")
+				.get("/v1/users/fakeId/phoneNumbers/someNumber")
+				.reply(500);
+			nock("https://api.catapult.inetwork.com:443")
 				.get("/v1/users/fakeId/calls/fakeId")
 				.reply(500);
 		});
