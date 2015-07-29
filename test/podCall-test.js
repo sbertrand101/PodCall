@@ -117,6 +117,50 @@ describe("PodCall", function () {
 			nock.cleanAll();
 		});
 	});
+	describe("should answer an incoming call", function () {
+		before(function () {
+			nock("https://api.catapult.inetwork.com:443")
+				.get("/v1/users/fakeId/calls/fakeId")
+				.reply(200);
+
+			nock("https://api.catapult.inetwork.com:443")
+				.post("/v1/users/fakeId/phoneNumbers/someNumber",
+					{ "eventType" : "incomingcall",
+						"to"         : "someNumber",
+						"callId"     : "fakeId"
+					})
+				.reply(200,
+					{
+						"name" : "fakeUrl"
+					});
+
+			nock("https://api.catapult.inetwork.com:443")
+				.get("/v1/users/fakeId/phoneNumbers/someNumber")
+				.reply(200);
+
+			nock("https://api.catapult.inetwork.com:443")
+				.post("/v1/users/fakeId/calls/undefined/audio", {})
+				.reply(500);
+
+			nock("https://api.catapult.inetwork.com:443")
+				.post("/v1/users/fakeId/calls/undefined", { "state" : "completed" })
+				.reply(500);
+		});
+		it("should fail to play audio and hang up", function (done) {
+			supertest(app)
+				.post("/calls")
+				.send({
+					"eventType" : "incomingcall",
+					"to"        : "someNumber",
+					"callId"    : "fakeId"
+				})
+				.expect(500)
+				.end(done);
+		});
+		after(function () {
+			nock.cleanAll();
+		});
+	});
 	describe("Should handle non-incoming-call events", function () {
 		before(function () {
 			nock("https://api.catapult.inetwork.com:443")
@@ -169,20 +213,6 @@ describe("PodCall", function () {
 	describe("should handle posts to /signup", function () {
 		var stub;
 		before(function () {
-			nock("http://127.0.0.1:64997")
-				.post("/signup",
-					{ "email"     : "test@test.com",
-						"referral"   : "someone",
-						"suggestion" : "something" })
-				.reply(200, [ "(716) 259-1901","(828) 552-4457","(321) 270-7744","(521) 434-0404",
-				"(602) 730-9977","(415) 423-0082","(910) 408-5968","(347) 474-9604","(615) 682-8055" ],
-				{ "x-powered-by"  : "Express",
-					"content-type"   : "application/json; charset=utf-8",
-					"content-length" : "154",
-					etag             : "W/\"9a-Xsc3P9sQD0qX2V2aKIIaNA\"",
-					date             : "Tue, 28 Jul 2015 19:32:44 GMT",
-					connection       : "close" });
-
 			var fakeClient = {
 				query : function (config, values, callback) {
 					callback(null);
@@ -204,31 +234,15 @@ describe("PodCall", function () {
 				.expect(200)
 				.end(done);
 		});
-		it("should handle invalid posts to /signup", function (done) {
-			supertest(app)
-				.post("/signup")
-				.send({
-					"email" : "test@test.com"
-				})
-				.expect(400)
-				.end(done);
-		});
 		after(function () {
-			nock.cleanAll();
 			pg.connect.restore();
 		});
 	});
 	describe("should handle connection errors on posts to /signup", function () {
 		var stub;
 		before(function () {
-			var fakeClient = {
-				query : function (config, values, callback) {
-					callback(null);
-				}
-			};
-
 			stub = sinon.stub(pg, "connect", function (connectionString, callback) {
-				callback(500, fakeClient, function () {});
+				callback(500, null, function () {});
 			});
 		});
 		it("should handle a connection error", function (done) {
