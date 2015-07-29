@@ -185,10 +185,7 @@ describe("PodCall", function () {
 
 			var fakeClient = {
 				query : function (config, values, callback) {
-					var result = {
-						"rows" : [ { id : 1 } ]
-					};
-					callback(null, result);
+					callback(null);
 				}
 			};
 
@@ -226,10 +223,7 @@ describe("PodCall", function () {
 		before(function () {
 			var fakeClient = {
 				query : function (config, values, callback) {
-					var result = {
-						"rows" : [ { id : 1 } ]
-					};
-					callback(null, result);
+					callback(null);
 				}
 			};
 
@@ -257,9 +251,6 @@ describe("PodCall", function () {
 		before(function () {
 			var fakeClient = {
 				query : function (config, values, callback) {
-					var result = {
-						"rows" : [ { id : 1 } ]
-					};
 					callback(500);
 				}
 			};
