@@ -70,6 +70,10 @@ a:hover {
     font-family: 'Bitter', serif;
 }
 
+.twitter-icon {
+	color: #fff;
+}
+
 .icon-bar {
 	background-color: #fff;
 }
@@ -194,7 +198,6 @@ section {
 	font-size: 2em;
 	color: #ff6600;
 	font-weight: bold;
-	display: none;
 }
 
 .invalidEmailWarning {
