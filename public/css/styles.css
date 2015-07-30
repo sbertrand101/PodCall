@@ -202,13 +202,13 @@ section {
 
 .invalidEmailWarning {
 	font-size: 1em;
-	color: #f00;
+	color: #ff6600;
 	display: none;
 }
 
 .emptyFieldWarning {
 	font-size: 1em;
-	color: #f00;
+	color: #ff6600;
 	display: none;
 }
 
