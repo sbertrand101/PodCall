@@ -57,12 +57,33 @@ describe("PodCall", function () {
 		before(function () {
 			nock("https://api.catapult.inetwork.com:443")
 				.get("/v1/users/fakeId/phoneNumbers/someNumber")
-				.reply(500);
+				.reply(200);
 			nock("https://api.catapult.inetwork.com:443")
 				.get("/v1/users/fakeId/calls/fakeId")
 				.reply(500);
 		});
 		it("should handle errors when getting the call ID", function (done) {
+			supertest(app)
+				.post("/calls")
+				.send({
+					"callId"    : "fakeId",
+					"eventType" : "incomingcall",
+					"to"        : "someNumber"
+				})
+				.expect(500)
+				.end(done);
+		});
+		after(function () {
+			nock.cleanAll();
+		});
+	});
+	describe("should answer an incoming call", function () {
+		before(function () {
+			nock("https://api.catapult.inetwork.com:443")
+				.get("/v1/users/fakeId/phoneNumbers/someNumber")
+				.reply(500);
+		});
+		it("should handle errors when getting the phone number", function (done) {
 			supertest(app)
 				.post("/calls")
 				.send({
