@@ -67,7 +67,7 @@ describe("PodCall", function () {
 				.post("/calls")
 				.send({
 					"callId"    : "fakeId",
-					"eventType" : "incomingcall",
+					"eventType" : "answer",
 					"to"        : "someNumber"
 				})
 				.expect(500)
@@ -88,7 +88,7 @@ describe("PodCall", function () {
 				.post("/calls")
 				.send({
 					"callId"    : "fakeId",
-					"eventType" : "incomingcall",
+					"eventType" : "answer",
 					"to"        : "someNumber"
 				})
 				.expect(500)
@@ -106,7 +106,7 @@ describe("PodCall", function () {
 
 			nock("https://api.catapult.inetwork.com:443")
 				.post("/v1/users/fakeId/phoneNumbers/someNumber",
-					{ "eventType" : "incomingcall",
+					{ "eventType" : "answer",
 						"to"         : "someNumber",
 						"callId"     : "fakeId"
 					})
@@ -127,7 +127,7 @@ describe("PodCall", function () {
 			supertest(app)
 				.post("/calls")
 				.send({
-					"eventType" : "incomingcall",
+					"eventType" : "answer",
 					"to"        : "someNumber",
 					"callId"    : "fakeId"
 				})
@@ -146,7 +146,7 @@ describe("PodCall", function () {
 
 			nock("https://api.catapult.inetwork.com:443")
 				.post("/v1/users/fakeId/phoneNumbers/someNumber",
-					{ "eventType" : "incomingcall",
+					{ "eventType" : "answer",
 						"to"         : "someNumber",
 						"callId"     : "fakeId"
 					})
@@ -171,7 +171,7 @@ describe("PodCall", function () {
 			supertest(app)
 				.post("/calls")
 				.send({
-					"eventType" : "incomingcall",
+					"eventType" : "answer",
 					"to"        : "someNumber",
 					"callId"    : "fakeId"
 				})
