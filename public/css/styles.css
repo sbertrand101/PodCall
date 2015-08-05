@@ -195,6 +195,10 @@ section {
 	background-color: #fff;
 }
 
+#FAQ {
+	background-color: rgba(35,25,0,0.7);
+}
+
 .phoneNumber {
 	font-size: 2em;
 	color: #ff6600;
@@ -215,6 +219,20 @@ section {
 
 .signupHeading {
 	display: block;
+}
+
+.faqHeading {
+	color: #fff;
+}
+
+.faqQuestion {
+	font-style: italic;
+	color: #ff6600;
+}
+
+.faqAnswer {
+	font-style: italic;
+	color: #fff;
 }
 
 .signupThankYou {
