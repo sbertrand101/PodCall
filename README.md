@@ -5,6 +5,10 @@
 <a href="http://dev.bandwidth.com"><img src="https://s3.amazonaws.com/bwdemos/BW_Voice.png"/></a>
 </div>
 
+<div align="center"> 
+<b>This application is outdated, but will be updated soon!</b><br><br>
+</div> 
+
 PodCall is a catapult-based app for streaming podcasts through phone calls
 
 ## Install
